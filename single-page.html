@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Home Decor | Poltronas Clássicas e Móveis de Luxo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gold: '#9b7135',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes scale-up {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .animate-scale-up {
+            animation: scale-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        body {
+            background-color: #001220;
+            color: white;
+        }
+        .modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans selection:bg-gold selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#001220]/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-xl font-black tracking-[0.3em] uppercase text-white">Prime</span>
+                <span class="text-[8px] font-bold tracking-[0.5em] uppercase text-gold -mt-1">Home Decor</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-gold transition-colors">Coleções</a>
+                <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-gold transition-colors">Sobre</a>
+                <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-gold transition-colors">Contato</a>
+            </nav>
+            <button class="bg-white/5 hover:bg-white/10 p-3 rounded-full transition-colors border border-white/10">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 118 0m-9 5a3 3 0 11-6 0m6 2a9 9 0 11-18 0s3 0 6 0"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://i.imgur.com/GbRkMcI.jpeg" alt="Hero" class="w-full h-full object-cover opacity-40 scale-110">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#001220]/60 via-transparent to-[#001220]"></div>
+            </div>
+            
+            <div class="relative z-10 text-center px-6 max-w-4xl">
+                <div class="inline-block mb-6">
+                    <span class="text-gold text-[10px] font-black uppercase tracking-[0.5em] block mb-2">Semana do Consumidor</span>
+                    <div class="h-px w-full bg-gold/30"></div>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-tight tracking-tight">
+                    A Arte de Viver com <span class="italic text-gold">Exclusividade</span>
+                </h1>
+                <p class="text-stone-400 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Mobiliário clássico produzido artesanalmente para quem não abre mão do luxo e da sofisticação em cada detalhe.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <a href="#catalogo" class="bg-gold text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-stone-900 transition-all shadow-2xl">
+                        Explorar Coleção
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section id="catalogo" class="max-w-7xl mx-auto px-6 py-32">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4 tracking-tight">Peças em Destaque</h2>
+                    <p class="text-stone-500 font-light tracking-wide italic">Curadoria exclusiva para ambientes de alto padrão</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-gold">Filtrar por Estilo</span>
+                    <div class="h-px w-12 bg-gold/30"></div>
+                </div>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <!-- Products will be injected here -->
+            </div>
+
+            <!-- Trust Section -->
+            <div class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24">
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/20 transition-colors border border-white/10">
+                        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h4 class="font-serif text-xl text-white mb-2">Qualidade Artesanal</h4>
+                    <p class="text-stone-400 text-sm font-light">Cada peça é produzida com materiais nobres e acabamento manual.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/20 transition-colors border border-white/10">
+                        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-serif text-xl text-white mb-2">Entrega Premium</h4>
+                    <p class="text-stone-400 text-sm font-light">Logística especializada para garantir a integridade do seu investimento.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/20 transition-colors border border-white/10">
+                        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-serif text-xl text-white mb-2">Compra Segura</h4>
+                    <p class="text-stone-400 text-sm font-light">Atendimento personalizado para total segurança em sua aquisição.</p>
+                </div>
+            </div>
+            
+            <div class="mt-32 text-center">
+                <p class="text-stone-500 text-[10px] font-bold uppercase tracking-[0.4em] mb-4">Prime Home Decor</p>
+                <div class="w-12 h-px bg-gold mx-auto opacity-40"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 md:p-8">
+        <div class="absolute inset-0 bg-[#001220]/90 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-6xl max-h-[95vh] overflow-hidden rounded-[2rem] shadow-2xl flex flex-col md:flex-row animate-scale-up border border-gold/20">
+            <button onclick="closeModal()" class="absolute top-6 right-6 z-10 bg-white shadow-lg p-2 rounded-full hover:bg-stone-100 transition-colors border border-stone-200">
+                <svg class="w-6 h-6 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="modal-image-container" class="w-full md:w-1/2 aspect-square md:h-auto overflow-hidden bg-stone-100">
+                <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto bg-white flex flex-col text-stone-900">
+                <div class="flex-grow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div id="modal-style" class="text-[#9b7135] text-[10px] md:text-xs font-black uppercase tracking-widest"></div>
+                        <div class="h-px w-6 md:w-8 bg-gold/30"></div>
+                        <div class="bg-gold/10 text-gold text-[8px] md:text-[9px] font-black px-2 py-0.5 rounded uppercase">Oferta Limitada</div>
+                    </div>
+                    <h2 id="modal-name" class="text-2xl md:text-5xl font-serif text-[#001220] mb-6 md:mb-8 leading-tight font-bold tracking-tight"></h2>
+                    <p id="modal-description" class="text-stone-600 text-base md:text-lg leading-relaxed whitespace-pre-line font-light italic mb-8 md:mb-10"></p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-stone-100">
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <div class="w-8 h-8 md:w-10 md:h-10 bg-stone-50 flex items-center justify-center rounded-lg border border-stone-100">
+                                <svg class="w-4 h-4 md:w-5 md:h-5 text-[#9b7135]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-[8px] md:text-[10px] font-black text-stone-400 uppercase tracking-widest">Dimensões</h4>
+                                <p id="modal-measures" class="text-xs md:text-sm font-bold text-[#001220]"></p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <div class="w-8 h-8 md:w-10 md:h-10 bg-stone-50 flex items-center justify-center rounded-lg border border-stone-100">
+                                <svg class="w-4 h-4 md:w-5 md:h-5 text-[#9b7135]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.172-1.172a4 4 0 115.656 5.656l-1.172 1.172" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-[8px] md:text-[10px] font-black text-stone-400 uppercase tracking-widest">Acabamento</h4>
+                                <p id="modal-fabric" class="text-xs md:text-sm font-bold text-[#001220]"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 md:mt-12 space-y-4">
+                    <div class="bg-stone-50 p-6 md:p-8 rounded-3xl border border-gold/20 shadow-inner relative overflow-hidden group">
+                        <span class="block text-[9px] md:text-[11px] text-gold uppercase tracking-[0.4em] font-black mb-3">Condição Exclusiva de Campanha</span>
+                        <div class="flex flex-col mb-4">
+                            <span id="modal-original-price" class="text-stone-400 text-xs md:text-sm line-through font-medium"></span>
+                            <div class="flex items-baseline gap-2 md:gap-3">
+                                <span id="modal-installment" class="text-3xl md:text-6xl font-black text-stone-900 tracking-tighter drop-shadow-sm"></span>
+                                <span class="text-stone-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">/ mensal</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="h-px w-3 md:w-4 bg-stone-300"></div>
+                            <span id="modal-total" class="text-[8px] md:text-[10px] text-stone-400 font-bold uppercase tracking-widest"></span>
+                        </div>
+                        <button class="w-full bg-gold text-white py-4 md:py-5 rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] hover:bg-stone-900 transition-all shadow-xl flex items-center justify-center gap-3">
+                            Garantir esta Oferta
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="text-center text-[8px] md:text-[10px] text-stone-400 uppercase tracking-widest font-bold">*Oferta válida enquanto durarem os estoques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            {
+                id: 'comoda-rustica-4-gavetas',
+                name: 'Cômoda Rústica com 4 Gavetas',
+                style: 'Rústico Colonial',
+                description: 'Cômoda em madeira maciça com acabamento rústico, ideal para ambientes que buscam calor e tradição. Possui 4 gavetas amplas com puxadores clássicos.',
+                priceTotal: 'R$ 3.588,00',
+                priceInstallment: '12x de R$ 299,00',
+                originalPriceInstallment: '12x de R$ 499,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Maciça',
+                image: 'https://i.imgur.com/NOqg4pS.jpeg'
+            },
+            {
+                id: 'comoda-bombe-escrivaninha',
+                name: 'Cômoda Bômbe Escrivaninha',
+                style: 'Clássico Francês',
+                description: 'Peça versátil que une a elegância da cômoda bômbe com a funcionalidade de uma escrivaninha. Design curvilíneo e acabamento refinado.',
+                priceTotal: 'R$ 7.548,00',
+                priceInstallment: '12x de R$ 629,00',
+                originalPriceInstallment: '12x de R$ 829,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Nobre',
+                image: 'https://i.imgur.com/Yt7mVZB.png'
+            },
+            {
+                id: 'livreiro-rustico-1',
+                name: 'Livreiro Rústico',
+                style: 'Rústico Elegance',
+                description: 'Livreiro imponente em madeira rústica, perfeito para organizar sua biblioteca com estilo e robustez. Prateleiras reforçadas e design atemporal.',
+                priceTotal: 'R$ 9.948,00',
+                priceInstallment: '12x de R$ 829,00',
+                originalPriceInstallment: '12x de R$ 1.669,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira de Demolição',
+                image: 'https://i.imgur.com/8GGia35.jpeg'
+            },
+            {
+                id: 'livreiro-rustico-2',
+                name: 'Livreiro Rústico',
+                style: 'Rústico Tradicional',
+                description: 'Mais uma opção de livreiro rústico com acabamento diferenciado. Peça sólida que traz a beleza da madeira natural para seu escritório ou sala.',
+                priceTotal: 'R$ 9.948,00',
+                priceInstallment: '12x de R$ 829,00',
+                originalPriceInstallment: '12x de R$ 1.669,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Maciça',
+                image: 'https://i.imgur.com/taY7XEH.jpeg'
+            },
+            {
+                id: 'comoda-bombe-marchetada',
+                name: 'Cômoda Bômbe Marchetada',
+                style: 'Marchetaria Clássica',
+                description: 'Trabalho primoroso de marchetaria em uma cômoda bômbe de lines clássicas. Uma verdadeira joia para decorar seu quarto ou hall de entrada.',
+                priceTotal: 'R$ 2.988,00',
+                priceInstallment: '12x de R$ 249,00',
+                originalPriceInstallment: '12x de R$ 375,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira com Marchetaria',
+                image: 'https://i.imgur.com/eDUVmOK.png'
+            },
+            {
+                id: 'livreiro-rustico-marchetado',
+                name: 'Livreiro Rústico Marchetado',
+                style: 'Rústico com Detalhes',
+                description: 'A união do rústico com a delicadeza da marchetaria. Um livreiro único que se destaca pela riqueza de detalhes e qualidade construtiva.',
+                priceTotal: 'R$ 3.588,00',
+                priceInstallment: '12x de R$ 299,00',
+                originalPriceInstallment: '12x de R$ 485,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Marchetada',
+                image: 'https://i.imgur.com/vmNtMPo.png'
+            },
+            {
+                id: 'recamier-classico-bege',
+                name: 'Recamier Clássico Bege',
+                style: 'Imperial Bege',
+                description: 'Conforto e sofisticação em um recamier clássico com estofamento bege de alta qualidade. Ideal para pés de cama ou halls de entrada luxuosos.',
+                priceTotal: 'R$ 7.188,00',
+                priceInstallment: '12x de R$ 599,00',
+                originalPriceInstallment: '12x de R$ 799,00',
+                measures: 'Sob consulta',
+                fabric: 'Tecido Premium Bege',
+                image: 'https://i.imgur.com/VIHMBFH.jpeg'
+            },
+            {
+                id: 'mesa-centro-classica',
+                name: 'Mesa de Centro Clássica',
+                style: 'Luís XV',
+                description: 'Mesa de centro com pés entalhados e design clássico. O complemento perfeito para uma sala de estar elegante e acolhedora.',
+                priceTotal: 'R$ 1.188,00',
+                priceInstallment: '12x de R$ 99,00',
+                originalPriceInstallment: '12x de R$ 149,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Entalhada',
+                image: 'https://i.imgur.com/t8O6yWW.jpeg'
+            },
+            {
+                id: 'mesa-auxiliar-classica',
+                name: 'Mesa Auxiliar Clássica',
+                style: 'Clássico Versátil',
+                description: 'Pequena mesa auxiliar com grandes detalhes. Prática e charmosa, pode ser usada como mesa lateral ou de apoio em diversos ambientes.',
+                priceTotal: 'R$ 1.188,00',
+                priceInstallment: '12x de R$ 99,00',
+                originalPriceInstallment: '12x de R$ 199,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Nobre',
+                image: 'https://i.imgur.com/D20asvP.jpeg'
+            },
+            {
+                id: 'diva-classico',
+                name: 'Divã Clássico',
+                style: 'Vitoriano',
+                description: 'Divã luxuoso com design vitoriano, proporcionando um toque de realeza ao seu ambiente. Estofamento capitonê e curvas elegantes.',
+                priceTotal: 'R$ 6.588,00',
+                priceInstallment: '12x de R$ 549,00',
+                originalPriceInstallment: '12x de R$ 1.000,00',
+                measures: 'Sob consulta',
+                fabric: 'Veludo Premium',
+                image: 'https://i.imgur.com/tJkVgnu.jpeg'
+            },
+            {
+                id: 'cadeira-classica-1',
+                name: 'Cadeira Clássica',
+                style: 'Jantar Imperial',
+                description: 'Cadeira de jantar com design clássico e encosto trabalhado. Conforto e elegância para suas refeições e momentos especiais.',
+                priceTotal: 'R$ 1.188,00',
+                priceInstallment: '12x de R$ 99,00',
+                originalPriceInstallment: '12x de R$ 149,00',
+                measures: '107x51x57cm',
+                fabric: 'Madeira e Estofado',
+                image: 'https://images.tcdn.com.br/img/img_prod/1200797/cadeira_de_jantar_classica_107x51x57cm_39237_2_c2add22d59430b5a14732bbc39cc8c6d.jpg'
+            },
+            {
+                id: 'recamier-classica-1',
+                name: 'Recamier Clássica',
+                style: 'Elegance Noir',
+                description: 'Recamier com design clássico e acabamento impecável. Uma peça que une funcionalidade e beleza estética para seu quarto.',
+                priceTotal: 'R$ 3.588,00',
+                priceInstallment: '12x de R$ 299,00',
+                originalPriceInstallment: '12x de R$ 499,00',
+                measures: 'Sob consulta',
+                fabric: 'Tecido Nobre',
+                image: 'https://i.imgur.com/C8232wb.jpeg'
+            },
+            {
+                id: 'recamier-classica-2',
+                name: 'Recamier Clássica',
+                style: 'Royal Comfort',
+                description: 'Outra variação da nossa recamier clássica, com detalhes que encantam e proporcionam um descanso luxuoso.',
+                priceTotal: 'R$ 3.588,00',
+                priceInstallment: '12x de R$ 299,00',
+                originalPriceInstallment: '12x de R$ 499,00',
+                measures: 'Sob consulta',
+                fabric: 'Veludo Soft',
+                image: 'https://i.imgur.com/x50wTVG.jpeg'
+            },
+            {
+                id: 'espelho-classico-ouro',
+                name: 'Espelho Clássico Folheado a Ouro',
+                style: 'Barroco Dourado',
+                description: 'Espelho com moldura ricamente trabalhada e folheada a ouro. Uma peça de destaque que amplia e ilumina o ambiente com luxo.',
+                priceTotal: 'R$ 468,00',
+                priceInstallment: '12x de R$ 39,00',
+                originalPriceInstallment: '12x de R$ 59,00',
+                measures: 'Sob consulta',
+                fabric: 'Moldura Folheada a Ouro',
+                image: 'https://i.imgur.com/YB7GO8E.jpeg'
+            },
+            {
+                id: 'poltrona-classica-1',
+                name: 'Poltrona Clássica',
+                style: 'Bergère Tradicional',
+                description: 'Poltrona clássica com encosto alto e braços envolventes. O máximo em conforto e estilo para seu momento de relaxamento.',
+                priceTotal: 'R$ 2.988,00',
+                priceInstallment: '12x de R$ 249,00',
+                originalPriceInstallment: '12x de R$ 349,00',
+                measures: 'Sob consulta',
+                fabric: 'Veludo Premium',
+                image: 'https://i.imgur.com/GbRkMcI.jpeg'
+            },
+            {
+                id: 'sofa-3-lugares-classico-1',
+                name: 'Sofá de 3 Lugares Clássico',
+                style: 'Chesterfield Style',
+                description: 'Sofá amplo de 3 lugares com design clássico e estofamento capitonê. Imponência e conforto para receber seus convidados.',
+                priceTotal: 'R$ 4.788,00',
+                priceInstallment: '12x de R$ 399,00',
+                originalPriceInstallment: '12x de R$ 599,00',
+                measures: 'Sob consulta',
+                fabric: 'Tecido de Alta Qualidade',
+                image: 'https://i.imgur.com/g3v10fN.jpeg'
+            },
+            {
+                id: 'sofa-3-lugares-classico-2',
+                name: 'Sofá de 3 Lugares Clássico',
+                style: 'Majestic Sofa',
+                description: 'Sofá de alto padrão com detalhes entalhados e conforto excepcional. Uma peça central para uma sala de estar de prestígio.',
+                priceTotal: 'R$ 7.188,00',
+                priceInstallment: '12x de R$ 599,00',
+                originalPriceInstallment: '12x de R$ 999,00',
+                measures: 'Sob consulta',
+                fabric: 'Veludo de Luxo',
+                image: 'https://i.imgur.com/i2ZzK31.jpeg'
+            },
+            {
+                id: 'comoda-classica-1',
+                name: 'Cômoda Clássica',
+                style: 'Vintage Elegance',
+                description: 'Cômoda com design vintage e acabamento clássico. Gavetas funcionais e estética refinada para organizar seu espaço com charme.',
+                priceTotal: 'R$ 3.588,00',
+                priceInstallment: '12x de R$ 299,00',
+                originalPriceInstallment: '12x de R$ 399,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Nobre',
+                image: 'https://i.imgur.com/SoyPHv6.png'
+            },
+            {
+                id: 'espelho-veneziano',
+                name: 'Espelho Decorativo Veneziano',
+                style: 'Veneziano Autêntico',
+                description: 'Espelho com design veneziano e detalhes sofisticados. Uma peça de arte que traz a tradição de Veneza para sua decoração.',
+                priceTotal: 'R$ 1.068,00',
+                priceInstallment: '12x de R$ 89,00',
+                originalPriceInstallment: '12x de R$ 129,00',
+                measures: '100x82cm',
+                fabric: 'Cristal e Detalhes Venezianos',
+                image: 'https://images.tcdn.com.br/img/img_prod/1200797/espelho_decorativo_veneziano_100x82cm_espelho_de_parede_de_design_classico_detalhes_sofisticados_33886_2_0b52f8638f48f7076b31cfd234e3802c.jpg'
+            },
+            {
+                id: 'armario-classico',
+                name: 'Armário Clássico',
+                style: 'Garderobe Royal',
+                description: 'Armário imponente com portas trabalhadas e amplo espaço interno. Organização e luxo em uma única peça de mobiliário.',
+                priceTotal: 'R$ 4.188,00',
+                priceInstallment: '12x de R$ 349,00',
+                originalPriceInstallment: '12x de R$ 499,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Maciça',
+                image: 'https://i.imgur.com/HSL7g0T.jpeg'
+            },
+            {
+                id: 'cadeira-classica-2',
+                name: 'Cadeira Clássica',
+                style: 'Medalhão',
+                description: 'Cadeira estilo medalhão com encosto oval e estofamento confortável. Um clássico que nunca sai de moda para sua sala de jantar.',
+                priceTotal: 'R$ 1.188,00',
+                priceInstallment: '12x de R$ 99,00',
+                originalPriceInstallment: '12x de R$ 199,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira e Veludo',
+                image: 'https://i.imgur.com/NPI3pWH.jpeg'
+            },
+            {
+                id: 'cadeira-classica-3',
+                name: 'Cadeira Clássica',
+                style: 'Luis Felipe',
+                description: 'Cadeira com lines retas e elegantes, característica do estilo Luis Felipe. Versátil e sofisticada para diversos ambientes.',
+                priceTotal: 'R$ 1.188,00',
+                priceInstallment: '12x de R$ 99,00',
+                originalPriceInstallment: '12x de R$ 199,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira Nobre',
+                image: 'https://i.imgur.com/7OrSDwR.jpeg'
+            },
+            {
+                id: 'espelho-classico-2',
+                name: 'Espelho Clássico',
+                style: 'Moldura Entalhada',
+                description: 'Espelho decorativo com moldura entalhada à mão. Traz profundidade e um toque de antiguidade charmosa para sua parede.',
+                priceTotal: 'R$ 2.988,00',
+                priceInstallment: '12x de R$ 249,00',
+                originalPriceInstallment: '12x de R$ 399,00',
+                measures: 'Sob consulta',
+                fabric: 'Moldura em Madeira',
+                image: 'https://images.tcdn.com.br/img/img_prod/1200797/espelho_decorativo_clssico_4_20260312115719_5670d7530527.jpg'
+            },
+            {
+                id: 'aparador-classico',
+                name: 'Aparador Clássico',
+                style: 'Console de Luxo',
+                description: 'Aparador elegante para hall de entrada ou sala de jantar. Design esguio com detalhes que valorizam qualquer espaço.',
+                priceTotal: 'R$ 2.388,00',
+                priceInstallment: '12x de R$ 199,00',
+                originalPriceInstallment: '12x de R$ 349,00',
+                measures: 'Sob consulta',
+                fabric: 'Madeira e Verniz',
+                image: 'https://i.imgur.com/3tUc7J8.jpeg'
+            }
+        ];
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(product => `
+                <div class="group cursor-pointer bg-white rounded-[2rem] overflow-hidden border border-stone-100 shadow-sm hover:shadow-2xl transition-all duration-700" onclick="openModal('${product.id}')">
+                    <div class="relative aspect-square md:aspect-[4/3] overflow-hidden">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-700"></div>
+                        <div class="absolute top-4 left-4 flex flex-col gap-2">
+                            <span class="bg-stone-900 text-white text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg">Semana do Consumidor</span>
+                            ${product.originalPriceInstallment ? `<span class="bg-gold text-white text-[8px] md:text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg animate-pulse">Oferta Especial</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-8">
+                        <div class="flex justify-between items-start mb-2 md:mb-3">
+                            <h3 class="text-lg md:text-2xl font-serif text-stone-800 group-hover:text-gold transition-colors leading-tight flex-grow">${product.name}</h3>
+                        </div>
+                        <p class="text-stone-500 text-[10px] md:text-xs leading-relaxed mb-6 md:mb-8 line-clamp-2 italic font-light">${product.description}</p>
+                        <div class="flex flex-col border-t border-stone-100 pt-5 md:pt-6">
+                            <div class="flex items-end justify-between">
+                                <div class="flex flex-col">
+                                    ${product.originalPriceInstallment ? `<span class="text-stone-400 text-[10px] md:text-[11px] line-through mb-1 font-medium">De: ${product.originalPriceInstallment}</span>` : ''}
+                                    <div class="flex items-baseline gap-1.5">
+                                        <span class="text-[8px] md:text-[9px] text-stone-400 uppercase tracking-[0.1em] font-bold mb-1">12x de</span>
+                                        <span class="text-xl md:text-3xl font-black text-stone-900 tracking-tighter">${product.priceInstallment.split('de ')[1]}</span>
+                                    </div>
+                                    <span class="text-[8px] md:text-gold font-bold uppercase tracking-widest mt-1">Investimento Exclusivo</span>
+                                </div>
+                                <div class="bg-gold text-white p-3 rounded-full flex items-center justify-center transition-all shadow-xl">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('modal-image').src = product.image;
+            document.getElementById('modal-style').innerText = product.style;
+            document.getElementById('modal-name').innerText = product.name;
+            document.getElementById('modal-description').innerText = product.description;
+            document.getElementById('modal-measures').innerText = product.measures;
+            document.getElementById('modal-fabric').innerText = product.fabric;
+            document.getElementById('modal-original-price').innerText = product.originalPriceInstallment ? `De: ${product.originalPriceInstallment}` : '';
+            document.getElementById('modal-installment').innerText = product.priceInstallment;
+            document.getElementById('modal-total').innerText = `Total à vista: ${product.priceTotal}`;
+
+            document.getElementById('product-modal').classList.remove('hidden');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+            document.body.classList.remove('modal-open');
+        }
+
+        // Initialize
+        renderProducts();
+    </script>
+</body>
+</html>
