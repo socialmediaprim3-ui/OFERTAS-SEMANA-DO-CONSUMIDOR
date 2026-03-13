@@ -44,20 +44,6 @@ export const PRODUCTS: Product[] = [
     link: '#'
   },
   {
-    id: 'livreiro-rustico-2',
-    name: 'Livreiro Rústico',
-    style: 'Rústico Tradicional',
-    description: 'Mais uma opção de livreiro rústico com acabamento diferenciado. Peça sólida que traz a beleza da madeira natural para seu escritório ou sala.',
-    priceTotal: 'R$ 9.948,00',
-    priceInstallment: '12x de R$ 829,00',
-    originalPriceTotal: 'R$ 20.028,00',
-    originalPriceInstallment: '12x de R$ 1.669,00',
-    measures: 'Sob consulta',
-    fabric: 'Madeira Maciça',
-    image: 'https://i.imgur.com/taY7XEH.jpeg',
-    link: '#'
-  },
-  {
     id: 'comoda-bombe-marchetada',
     name: 'Cômoda Bômbe Marchetada',
     style: 'Marchetaria Clássica',
@@ -86,20 +72,6 @@ export const PRODUCTS: Product[] = [
     link: '#'
   },
   {
-    id: 'recamier-classico-bege',
-    name: 'Recamier Clássico Bege',
-    style: 'Imperial Bege',
-    description: 'Conforto e sofisticação em um recamier clássico com estofamento bege de alta qualidade. Ideal para pés de cama ou halls de entrada luxuosos.',
-    priceTotal: 'R$ 7.188,00',
-    priceInstallment: '12x de R$ 599,00',
-    originalPriceTotal: 'R$ 9.588,00',
-    originalPriceInstallment: '12x de R$ 799,00',
-    measures: 'Sob consulta',
-    fabric: 'Tecido Premium Bege',
-    image: 'https://i.imgur.com/VIHMBFH.jpeg',
-    link: '#'
-  },
-  {
     id: 'mesa-centro-classica',
     name: 'Mesa de Centro Clássica',
     style: 'Luís XV',
@@ -111,20 +83,6 @@ export const PRODUCTS: Product[] = [
     measures: 'Sob consulta',
     fabric: 'Madeira Entalhada',
     image: 'https://i.imgur.com/t8O6yWW.jpeg',
-    link: '#'
-  },
-  {
-    id: 'mesa-auxiliar-classica',
-    name: 'Mesa Auxiliar Clássica',
-    style: 'Clássico Versátil',
-    description: 'Pequena mesa auxiliar com grandes detalhes. Prática e charmosa, pode ser usada como mesa lateral ou de apoio em diversos ambientes.',
-    priceTotal: 'R$ 1.188,00',
-    priceInstallment: '12x de R$ 99,00',
-    originalPriceTotal: 'R$ 2.388,00',
-    originalPriceInstallment: '12x de R$ 199,00',
-    measures: 'Sob consulta',
-    fabric: 'Madeira Nobre',
-    image: 'https://i.imgur.com/D20asvP.jpeg',
     link: '#'
   },
   {
@@ -153,34 +111,6 @@ export const PRODUCTS: Product[] = [
     measures: '107x51x57cm',
     fabric: 'Madeira e Estofado',
     image: 'https://images.tcdn.com.br/img/img_prod/1200797/cadeira_de_jantar_classica_107x51x57cm_39237_2_c2add22d59430b5a14732bbc39cc8c6d.jpg',
-    link: '#'
-  },
-  {
-    id: 'recamier-classica-1',
-    name: 'Recamier Clássica',
-    style: 'Elegance Noir',
-    description: 'Recamier com design clássico e acabamento impecável. Uma peça que une funcionalidade e beleza estética para seu quarto.',
-    priceTotal: 'R$ 3.588,00',
-    priceInstallment: '12x de R$ 299,00',
-    originalPriceTotal: 'R$ 5.988,00',
-    originalPriceInstallment: '12x de R$ 499,00',
-    measures: 'Sob consulta',
-    fabric: 'Tecido Nobre',
-    image: 'https://i.imgur.com/C8232wb.jpeg',
-    link: '#'
-  },
-  {
-    id: 'recamier-classica-2',
-    name: 'Recamier Clássica',
-    style: 'Royal Comfort',
-    description: 'Outra variação da nossa recamier clássica, com detalhes que encantam e proporcionam um descanso luxuoso.',
-    priceTotal: 'R$ 3.588,00',
-    priceInstallment: '12x de R$ 299,00',
-    originalPriceTotal: 'R$ 5.988,00',
-    originalPriceInstallment: '12x de R$ 499,00',
-    measures: 'Sob consulta',
-    fabric: 'Veludo Soft',
-    image: 'https://i.imgur.com/x50wTVG.jpeg',
     link: '#'
   },
   {
