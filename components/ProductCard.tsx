@@ -10,6 +10,22 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product, onOpen }) => {
   const hasDiscount = !!product.originalPriceInstallment;
 
+  const calculateDiscount = (original?: string, current?: string) => {
+    if (!original || !current) return 0;
+    const parse = (val: string) => {
+      // Extract the numeric part after "R$ "
+      const match = val.match(/R\$\s*([\d.,]+)/);
+      if (!match) return 0;
+      return parseFloat(match[1].replace(/\./g, '').replace(',', '.'));
+    };
+    const orig = parse(original);
+    const curr = parse(current);
+    if (!orig || !curr) return 0;
+    return Math.round(((orig - curr) / orig) * 100);
+  };
+
+  const discountPercentage = calculateDiscount(product.originalPriceInstallment, product.priceInstallment);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -28,12 +44,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onOpen }) => {
         <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-700" />
         
         <div className="absolute top-4 left-4 flex flex-col gap-2">
-          <span className="bg-stone-900 text-white text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg">
-            Semana do Consumidor
-          </span>
-          {hasDiscount && (
-            <span className="bg-gold text-white text-[8px] md:text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg animate-pulse">
-              Oferta Especial
+          {hasDiscount && discountPercentage > 0 && (
+            <span className="bg-red-600 text-white text-[10px] md:text-[12px] font-black uppercase tracking-[0.1em] px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg">
+              -{discountPercentage}%
             </span>
           )}
         </div>
@@ -52,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onOpen }) => {
           <div className="flex items-end justify-between">
             <div className="flex flex-col">
               {hasDiscount && (
-                <span className="text-stone-400 text-[10px] md:text-[11px] line-through mb-1 font-medium">
+                <span className="text-stone-500 text-[11px] md:text-[13px] line-through mb-1 font-bold opacity-80">
                   De: {product.originalPriceInstallment}
                 </span>
               )}

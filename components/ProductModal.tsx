@@ -7,6 +7,21 @@ interface ProductModalProps {
 }
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
+  const calculateDiscount = (original?: string, current?: string) => {
+    if (!original || !current) return 0;
+    const parse = (val: string) => {
+      const match = val.match(/R\$\s*([\d.,]+)/);
+      if (!match) return 0;
+      return parseFloat(match[1].replace(/\./g, '').replace(',', '.'));
+    };
+    const orig = parse(original);
+    const curr = parse(current);
+    if (!orig || !curr) return 0;
+    return Math.round(((orig - curr) / orig) * 100);
+  };
+
+  const discountPercentage = calculateDiscount(product.originalPriceInstallment, product.priceInstallment);
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -41,7 +56,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
             <div className="flex items-center gap-3 mb-4">
               <div className="text-[#9b7135] text-[10px] md:text-xs font-black uppercase tracking-widest">{product.style}</div>
               <div className="h-px w-6 md:w-8 bg-gold/30"></div>
-              <div className="bg-gold/10 text-gold text-[8px] md:text-[9px] font-black px-2 py-0.5 rounded uppercase">Oferta Limitada</div>
+              {discountPercentage > 0 && (
+                <div className="bg-red-600 text-white text-[10px] md:text-[11px] font-black px-2 py-0.5 rounded uppercase">-{discountPercentage}% OFF</div>
+              )}
             </div>
             <h2 className="text-2xl md:text-5xl font-serif text-[#001220] mb-6 md:mb-8 leading-tight font-bold tracking-tight">{product.name}</h2>
             
@@ -87,7 +104,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
               
               <div className="flex flex-col mb-4">
                 {product.originalPriceInstallment && (
-                  <span className="text-stone-400 text-xs md:text-sm line-through font-medium">
+                  <span className="text-stone-500 text-sm md:text-base line-through font-bold opacity-80 mb-1">
                     De: {product.originalPriceInstallment}
                   </span>
                 )}
