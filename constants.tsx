@@ -86,20 +86,6 @@ export const PRODUCTS: Product[] = [
     link: '#'
   },
   {
-    id: 'diva-classico',
-    name: 'Divã Clássico',
-    style: 'Vitoriano',
-    description: 'Divã luxuoso com design vitoriano, proporcionando um toque de realeza ao seu ambiente. Estofamento capitonê e curvas elegantes.',
-    priceTotal: 'R$ 6.588,00',
-    priceInstallment: '12x de R$ 549,00',
-    originalPriceTotal: 'R$ 12.000,00',
-    originalPriceInstallment: '12x de R$ 1.000,00',
-    measures: 'Sob consulta',
-    fabric: 'Veludo Premium',
-    image: 'https://i.imgur.com/tJkVgnu.jpeg',
-    link: '#'
-  },
-  {
     id: 'cadeira-classica-1',
     name: 'Cadeira Clássica',
     style: 'Jantar Imperial',
