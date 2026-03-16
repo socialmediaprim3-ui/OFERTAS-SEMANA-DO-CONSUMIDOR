@@ -143,7 +143,7 @@ const App: React.FC = () => {
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center">
               <span className="text-[10px] font-bold uppercase tracking-[0.4em] px-8">
-                Ofertas da Semana do Consumidor - Condições válidas por tempo limitado
+                Ofertas do Mês do Consumidor - Condições válidas por tempo limitado
               </span>
               <div className="w-2 h-2 bg-red-600 rounded-full shadow-[0_0_8px_rgba(220,38,38,0.5)]" />
             </div>
@@ -170,7 +170,7 @@ const App: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-6xl font-serif text-white mb-2 uppercase tracking-tight"
             >
-              Semana do <span className="text-gold italic font-normal">Consumidor</span>
+              Mês do <span className="text-gold italic font-normal">Consumidor</span>
             </motion.h2>
 
             <motion.img

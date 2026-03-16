@@ -266,5 +266,61 @@ export const PRODUCTS: Product[] = [
     fabric: 'Madeira e Verniz',
     image: 'https://i.imgur.com/3tUc7J8.jpeg',
     link: '#'
+  },
+  {
+    id: 'recamier-classico-vermelho',
+    name: 'Recamier Clássico Vermelho',
+    style: 'Imperial Velvet',
+    description: 'Recamier clássico com estofamento em veludo vermelho vibrante. Uma peça de destaque que une conforto real e elegância atemporal.',
+    priceTotal: 'R$ 3.588,00',
+    priceInstallment: '12x de R$ 299,00',
+    originalPriceTotal: 'R$ 5.988,00',
+    originalPriceInstallment: '12x de R$ 499,00',
+    measures: 'Sob consulta',
+    fabric: 'Veludo Premium',
+    image: 'https://i.imgur.com/OmWUaiN.jpeg',
+    link: '#'
+  },
+  {
+    id: 'recamier-classico-bege-new',
+    name: 'Recamier Clássico Bege',
+    style: 'Royal Comfort',
+    description: 'Recamier clássico com acabamento em tom bege sofisticado. Perfeito para complementar ambientes luxuosos com discrição e requinte.',
+    priceTotal: 'R$ 3.588,00',
+    priceInstallment: '12x de R$ 299,00',
+    originalPriceTotal: 'R$ 5.988,00',
+    originalPriceInstallment: '12x de R$ 499,00',
+    measures: 'Sob consulta',
+    fabric: 'Tecido Nobre',
+    image: 'https://i.imgur.com/lvSKjWj.jpeg',
+    link: '#'
+  },
+  {
+    id: 'mesa-jantar-espelhada',
+    name: 'Mesa de Jantar Espelhada',
+    style: 'Modern Classic',
+    description: 'Mesa de jantar com tampo espelhado e design clássico. Traz amplitude e um brilho inigualável para suas recepções mais elegantes.',
+    priceTotal: 'R$ 4.188,00',
+    priceInstallment: '12x de R$ 349,00',
+    originalPriceTotal: 'R$ 5.988,00',
+    originalPriceInstallment: '12x de R$ 499,00',
+    measures: 'Sob consulta',
+    fabric: 'Madeira e Espelho',
+    image: 'https://i.imgur.com/kSEEszW.jpeg',
+    link: '#'
+  },
+  {
+    id: 'mesa-auxiliar-dobravel',
+    name: 'Mesa Auxiliar Dobrável',
+    style: 'Versatile Classic',
+    description: 'Mesa auxiliar prática e elegante com sistema dobrável. Ideal para espaços dinâmicos que não abrem mão do estilo clássico.',
+    priceTotal: 'R$ 2.988,00',
+    priceInstallment: '12x de R$ 249,00',
+    originalPriceTotal: 'R$ 4.788,00',
+    originalPriceInstallment: '12x de R$ 399,00',
+    measures: 'Sob consulta',
+    fabric: 'Madeira Maciça',
+    image: 'https://i.imgur.com/lqEx0fk.png',
+    link: '#'
   }
 ];
